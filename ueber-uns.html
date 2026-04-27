@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Über AMASSA | Reinigung & Hauswartung St. Gallen | Unser Team</title>
+    <meta
+      name="description"
+      content="AMASSA GmbH - Ihr zuverlässiger Partner für Reinigung und Hauswartung seit Jahren. Professionelles Team, moderne Technik, persönlicher Service in St. Gallen."
+    />
+    <meta
+      name="keywords"
+      content="AMASSA Team, Über uns, Reinigungsfirma St. Gallen, Hauswartung Wittenbach"
+    />
+    <link rel="canonical" href="https://www.amassa.ch/ueber-uns.html" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "amassa-blue": "#2B4C7E",
+              "amassa-teal": "#5B9BD5",
+              "amassa-green": "#70AD47",
+              "amassa-accent": "#FFC000",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+      .nav-blur {
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.96);
+      }
+      .image-placeholder {
+        background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed #cbd5e0;
+        color: #64748b;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-gray-800 antialiased">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 bg-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <a href="index.html" class="flex items-center space-x-3">
+            <div
+              class="w-14 h-14 bg-gradient-to-br from-amassa-blue to-amassa-teal rounded-lg flex items-center justify-center shadow-lg"
+            >
+              <span class="text-white font-bold text-2xl">A</span>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-amassa-blue">AMASSA</div>
+              <div
+                class="text-xs text-amassa-teal font-semibold uppercase tracking-wide"
+              >
+                Reinigung & Hauswartung
+              </div>
+            </div>
+          </a>
+
+          <div class="hidden lg:flex items-center space-x-6">
+            <a
+              href="index.html"
+              class="text-gray-700 hover:text-amassa-blue transition-colors font-medium"
+              >Home</a
+            >
+            <div class="relative group">
+              <button
+                class="text-gray-700 hover:text-amassa-blue transition-colors font-medium flex items-center gap-1"
+              >
+                Reinigung <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <div
+                class="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100"
+              >
+                <div class="p-3">
+                  <a
+                    href="reinigung.html#baureinigung"
+                    class="block px-4 py-2.5 hover:bg-blue-50 rounded-lg text-sm"
+                    >Baureinigung</a
+                  >
+                  <a
+                    href="reinigung.html#bueroreinigung"
+                    class="block px-4 py-2.5 hover:bg-blue-50 rounded-lg text-sm"
+                    >Büroreinigung</a
+                  >
+                  <a
+                    href="reinigung.html#endreinigung"
+                    class="block px-4 py-2.5 hover:bg-blue-50 rounded-lg text-sm"
+                    >Endreinigung</a
+                  >
+                </div>
+              </div>
+            </div>
+            <a
+              href="hauswartung.html"
+              class="text-gray-700 hover:text-amassa-green transition-colors font-medium"
+              >Hauswartung</a
+            >
+            <a
+              href="abos-pakete.html"
+              class="text-gray-700 hover:text-amassa-accent transition-colors font-medium"
+              >Abos & Pakete</a
+            >
+            <a
+              href="referenzen.html"
+              class="text-gray-700 hover:text-amassa-blue transition-colors font-medium"
+              >Referenzen & Partner</a
+            >
+            <a
+              href="ueber-uns.html"
+              class="text-amassa-blue font-bold border-b-2 border-amassa-blue"
+              >Über uns</a
+            >
+            <a
+              href="kontakt.html"
+              class="bg-amassa-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-amassa-blue-light shadow-lg"
+              >Jetzt Offerte anfragen</a
+            >
+          </div>
+
+          <button id="mobile-menu-btn" class="lg:hidden text-amassa-blue">
+            <i data-lucide="menu" class="w-7 h-7"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-white border-t shadow-lg"
+      >
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href="index.html"
+            class="block text-gray-700 hover:text-amassa-blue font-medium py-2"
+            >Home</a
+          >
+          <a
+            href="reinigung.html"
+            class="block text-gray-700 hover:text-amassa-blue font-medium py-2"
+            >Reinigung</a
+          >
+          <a
+            href="hauswartung.html"
+            class="block text-gray-700 hover:text-amassa-green font-medium py-2"
+            >Hauswartung</a
+          >
+          <a
+            href="abos-pakete.html"
+            class="block text-gray-700 hover:text-amassa-accent font-medium py-2"
+            >Abos & Pakete</a
+          >
+          <a
+            href="referenzen.html"
+            class="block text-gray-700 hover:text-amassa-blue font-medium py-2"
+            >Referenzen & Partner</a
+          >
+          <a
+            href="ueber-uns.html"
+            class="block text-amassa-blue font-bold py-2 border-l-4 border-amassa-blue pl-3"
+            >Über uns</a
+          >
+          <a
+            href="kontakt.html"
+            class="block bg-amassa-blue text-white px-6 py-3 rounded-lg font-semibold text-center"
+            >Jetzt Offerte anfragen</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 border-b mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <a href="index.html" class="hover:text-amassa-blue transition-colors"
+            >Home</a
+          >
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          <span class="text-amassa-blue font-semibold">Über uns</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1
+              class="text-5xl md:text-6xl font-display font-bold text-amassa-blue mb-6"
+            >
+              Über AMASSA
+            </h1>
+            <p class="text-xl text-gray-700 mb-6 font-semibold">
+              Ihr Partner für professionelle Reinigung und Hauswartung in der
+              ganzen Schweiz
+            </p>
+            <p class="text-lg text-gray-600 mb-8">
+              Seit Jahren steht AMASSA für höchste Qualität, Zuverlässigkeit und
+              persönlichen Service. Unser engagiertes Team sorgt täglich dafür,
+              dass Ihre Räumlichkeiten und Liegenschaften in perfektem Zustand
+              sind.
+            </p>
+          </div>
+          <div>
+            <!-- PLACEHOLDER: Team/Office photo -->
+            <div class="image-placeholder rounded-3xl h-96 shadow-2xl">
+              <div class="text-center p-8">
+                <i
+                  data-lucide="image"
+                  class="w-16 h-16 mx-auto mb-2 opacity-30"
+                ></i>
+                <p class="font-semibold">TEAM PHOTO</p>
+                <p class="text-xs mt-1">800x600px - AMASSA team</p>
+                <p class="text-xs mt-2">
+                  Professional team photo or office image
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16">
+            <h2
+              class="text-4xl md:text-5xl font-display font-bold text-amassa-blue mb-6"
+            >
+              Unsere Mission
+            </h2>
+            <p class="text-xl text-gray-700 font-semibold mb-4">
+              "Ihre Sauberkeit. Unsere Mission."
+            </p>
+            <p class="text-lg text-gray-600">
+              Wir wollen der verlässlichste und professionellste Partner für
+              Reinigung und Hauswartung in der Schweiz sein. Durch höchste
+              Qualität, persönlichen Service und modernste Technik schaffen wir
+              dauerhaft saubere und gepflegte Räume.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-amassa-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              >
+                <i data-lucide="heart" class="w-8 h-8 text-amassa-blue"></i>
+              </div>
+              <h3 class="text-xl font-bold text-amassa-blue mb-3">
+                Leidenschaft
+              </h3>
+              <p class="text-gray-600">
+                Wir lieben, was wir tun, und das sieht man an jedem einzelnen
+                Ergebnis.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-amassa-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              >
+                <i
+                  data-lucide="shield-check"
+                  class="w-8 h-8 text-amassa-teal"
+                ></i>
+              </div>
+              <h3 class="text-xl font-bold text-amassa-blue mb-3">
+                Zuverlässigkeit
+              </h3>
+              <p class="text-gray-600">
+                Auf uns können Sie sich verlassen – pünktlich, termintreu,
+                professionell.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-amassa-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              >
+                <i data-lucide="users" class="w-8 h-8 text-amassa-green"></i>
+              </div>
+              <h3 class="text-xl font-bold text-amassa-blue mb-3">
+                Partnerschaft
+              </h3>
+              <p class="text-gray-600">
+                Langfristige Beziehungen statt einmaliger Aufträge – das ist
+                unser Ziel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Makes Us Different -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold text-amassa-blue mb-6"
+          >
+            Was uns auszeichnet
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Warum über 500 Kunden auf AMASSA vertrauen
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md"
+          >
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-amassa-blue/10 rounded-xl flex items-center justify-center flex-shrink-0"
+              >
+                <i data-lucide="award" class="w-6 h-6 text-amassa-blue"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-amassa-blue mb-2">
+                  Premium-Technikpartner
+                </h3>
+                <p class="text-gray-600">
+                  Wir arbeiten ausschließlich mit führenden Marken wie Wetrok,
+                  Kärcher und Kränzle. Das garantiert beste Ergebnisse bei jedem
+                  Auftrag.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md"
+          >
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-amassa-teal/10 rounded-xl flex items-center justify-center flex-shrink-0"
+              >
+                <i data-lucide="users" class="w-6 h-6 text-amassa-teal"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-amassa-blue mb-2">
+                  Erfahrenes Team
+                </h3>
+                <p class="text-gray-600">
+                  Unsere Mitarbeiter sind professionell geschult, vollversichert
+                  und bringen jahrelange Erfahrung mit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md"
+          >
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-amassa-green/10 rounded-xl flex items-center justify-center flex-shrink-0"
+              >
+                <i data-lucide="leaf" class="w-6 h-6 text-amassa-green"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-amassa-blue mb-2">
+                  Umweltbewusst
+                </h3>
+                <p class="text-gray-600">
+                  Wir setzen auf ökologische Reinigungsmittel und nachhaltige
+                  Verfahren – für Ihre Gesundheit und unsere Umwelt.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl p-8 border-2 border-gray-100 shadow-md"
+          >
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-amassa-accent/10 rounded-xl flex items-center justify-center flex-shrink-0"
+              >
+                <i data-lucide="map-pin" class="w-6 h-6 text-amassa-accent"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-amassa-blue mb-2">
+                  Regional verwurzelt
+                </h3>
+                <p class="text-gray-600">
+                  Mit Fokus auf St. Gallen kennen wir die Region und ihre
+                  Bedürfnisse. Gleichzeitig sind wir schweizweit für Sie da.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Numbers/Stats -->
+    <section class="py-20 bg-amassa-blue text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+            AMASSA in Zahlen
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-6xl font-bold text-amassa-accent mb-2">500+</div>
+            <div class="text-lg text-white/90">Zufriedene Kunden</div>
+          </div>
+          <div>
+            <div class="text-6xl font-bold text-amassa-accent mb-2">62</div>
+            <div class="text-lg text-white/90">Google 5-Sterne Bewertungen</div>
+          </div>
+          <div>
+            <div class="text-6xl font-bold text-amassa-accent mb-2">7</div>
+            <div class="text-lg text-white/90">Regionen in der Schweiz</div>
+          </div>
+          <div>
+            <div class="text-6xl font-bold text-amassa-accent mb-2">24/7</div>
+            <div class="text-lg text-white/90">Notfall-Pikettdienst</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold text-amassa-blue mb-6"
+          >
+            Unsere Geschichte
+          </h2>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+          <p class="text-gray-700 mb-6">
+            AMASSA wurde mit einer klaren Vision gegründet: professionelle
+            Reinigung und Hauswartung anzubieten, die höchsten Ansprüchen
+            gerecht wird. Was als kleines Team begann, ist heute ein etabliertes
+            Unternehmen mit über 500 zufriedenen Kunden in der ganzen Schweiz.
+          </p>
+
+          <p class="text-gray-700 mb-6">
+            Unser Erfolgsrezept ist einfach: Wir hören unseren Kunden zu,
+            arbeiten mit modernster Technik und setzen auf ein motiviertes,
+            professionelles Team. Jeder Auftrag wird mit der gleichen Sorgfalt
+            behandelt – egal ob es um die Reinigung eines einzelnen Büros oder
+            die langfristige Betreuung einer großen Liegenschaft geht.
+          </p>
+
+          <p class="text-gray-700 mb-6">
+            Besonders stolz sind wir auf unsere langjährigen Kundenbeziehungen.
+            Viele unserer Kunden vertrauen uns seit Jahren – das ist für uns der
+            beste Beweis, dass wir unsere Arbeit gut machen.
+          </p>
+
+          <p class="text-gray-700">
+            Mit unserem strategischen Fokus auf Hauswartung wollen wir in
+            Zukunft noch mehr Immobilieneigentümer und Verwaltungen dabei
+            unterstützen, ihre Liegenschaften professionell und zuverlässig
+            betreuen zu lassen.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section
+      class="py-20 bg-gradient-to-r from-amassa-blue to-amassa-teal text-white"
+    >
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+          Lernen Sie uns kennen
+        </h2>
+        <p class="text-xl md:text-2xl mb-10">
+          Kontaktieren Sie uns für ein unverbindliches Kennenlerngespräch
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="kontakt.html"
+            class="bg-amassa-accent text-amassa-blue px-10 py-5 rounded-xl font-bold text-lg hover:bg-amassa-accent-light shadow-2xl transition-all"
+          >
+            Jetzt Kontakt aufnehmen
+          </a>
+          <a
+            href="tel:+41782662566"
+            class="bg-white/10 backdrop-blur border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
+          >
+            +41 78 266 25 66
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+        >
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-amassa-teal to-amassa-accent rounded-lg flex items-center justify-center shadow-lg"
+              >
+                <span class="text-white font-bold text-xl">A</span>
+              </div>
+              <div>
+                <div class="text-2xl font-bold">AMASSA</div>
+                <div class="text-xs text-amassa-teal uppercase tracking-wide">
+                  Reinigung & Hauswartung
+                </div>
+              </div>
+            </div>
+            <p class="text-white/70 text-sm mb-6">
+              Ihr Partner für professionelle Reinigung und Hauswartung in der
+              ganzen Schweiz.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Reinigung</h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li>
+                <a
+                  href="reinigung.html#baureinigung"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Baureinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="reinigung.html#bueroreinigung"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Büroreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="reinigung.html#endreinigung"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Endreinigung</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Unternehmen</h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li>
+                <a
+                  href="hauswartung.html"
+                  class="hover:text-amassa-green transition-colors"
+                  >Hauswartung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="abos-pakete.html"
+                  class="hover:text-amassa-accent transition-colors"
+                  >Abos & Pakete</a
+                >
+              </li>
+              <li>
+                <a
+                  href="referenzen.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Referenzen & Partner</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ueber-uns.html"
+                  class="hover:text-amassa-teal transition-colors font-bold text-white"
+                  >Über uns</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Kontakt</h4>
+            <ul class="space-y-4 text-sm text-white/70">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="map-pin"
+                  class="w-5 h-5 flex-shrink-0 mt-0.5 text-amassa-teal"
+                ></i>
+                <div>Romanshornerstrasse 25<br />9300 Wittenbach</div>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="phone" class="w-5 h-5 text-amassa-teal"></i>
+                <a
+                  href="tel:+41782662566"
+                  class="hover:text-amassa-teal transition-colors"
+                  >+41 78 266 25 66</a
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="mail" class="w-5 h-5 text-amassa-teal"></i>
+                <a
+                  href="mailto:info@amassa.ch"
+                  class="hover:text-amassa-teal transition-colors"
+                  >info@amassa.ch</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
+          >
+            <p class="text-white/60">
+              © 2024 AMASSA GmbH. Alle Rechte vorbehalten.
+            </p>
+            <div class="flex gap-6 text-white/60">
+              <a
+                href="impressum.html"
+                class="hover:text-amassa-teal transition-colors"
+                >Impressum</a
+              >
+              <a
+                href="datenschutz.html"
+                class="hover:text-amassa-teal transition-colors"
+                >Datenschutz</a
+              >
+              <a
+                href="agb.html"
+                class="hover:text-amassa-teal transition-colors"
+                >AGB</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("nav-blur", "shadow-xl");
+        } else {
+          navbar.classList.remove("nav-blur", "shadow-xl");
+        }
+      });
+
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+          const icon = this.querySelector("[data-lucide]");
+          if (mobileMenu.classList.contains("hidden")) {
+            icon.setAttribute("data-lucide", "menu");
+          } else {
+            icon.setAttribute("data-lucide", "x");
+          }
+          lucide.createIcons();
+        });
+      }
+    </script>
+  </body>
+</html>
