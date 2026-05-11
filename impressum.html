@@ -1,118 +1,182 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Impressum - AMASSA GmbH, Romanshornerstrasse 25, 9300 Wittenbach, Schweiz">
     <title>Impressum | AMASSA GmbH</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-      @import url("master-styles-v2.css");
+        /* COLOR PALETTE V2 */
+        :root[data-theme="light"] {
+            --primary: #33539B; --primary-dark: #2F3C8B; --secondary: #4C9ACD; --accent: #D7B07A;
+            --bg-main: #F7F5F0; --surface: #FFFFFF; --surface-alt: #EEF3F8;
+            --text-primary: #2F3E4F; --text-muted: #6E7C8C; --border: #D9E2EC;
+            --shadow-sm: 0 2px 8px rgba(47,60,139,0.08); --shadow-md: 0 8px 24px rgba(47,60,139,0.12);
+        }
+        :root[data-theme="dark"] {
+            --primary: #4C9ACD; --primary-dark: #33539B; --secondary: #8CA9C4; --accent: #D7B07A;
+            --bg-main: #1a202c; --surface: #2d3748; --surface-alt: #374151;
+            --text-primary: #f7fafc; --text-muted: #cbd5e0; --border: #4a5568;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3); --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(--text-primary); line-height: 1.6; transition: all 0.3s; }
+        
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--surface); box-shadow: var(--shadow-sm); }
+        .navbar-container { max-width: 1280px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-primary); }
+        .logo-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; color: white; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); }
+        .logo-title { font-weight: 800; font-size: 1.25rem; }
+        .logo-subtitle { font-size: 0.75rem; color: var(--text-muted); }
+        .nav-menu { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav-menu a { color: var(--text-primary); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .nav-menu a:hover { color: var(--primary); }
+        .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .theme-toggle { background: var(--surface-alt); border: 2px solid var(--border); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; color: var(--text-primary); }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--text-primary); }
+        
+        /* HERO */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); padding: 8rem 2rem 4rem; margin-top: 80px; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: white; margin-bottom: 1rem; }
+        
+        /* CONTENT */
+        .section { padding: 4rem 2rem; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .content-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; box-shadow: var(--shadow-sm); }
+        .content-card h2 { font-size: 1.75rem; font-weight: 700; color: var(--text-primary); margin: 2rem 0 1rem; }
+        .content-card h2:first-child { margin-top: 0; }
+        .content-card p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+        .content-card strong { color: var(--text-primary); }
+        
+        /* FOOTER */
+        .footer { background: linear-gradient(135deg, #1a2332 0%, var(--primary-dark) 100%); color: white; padding: 2rem; text-align: center; }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); flex-direction: column; padding: 2rem; }
+            .nav-menu.active { display: flex; }
+            .mobile-toggle { display: block; }
+            .content-card { padding: 2rem; }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Navigation -->
     <nav class="navbar">
-      <div class="navbar-container">
-        <a href="index.html" class="logo">
-          <div class="logo-icon">A</div>
-          <div class="logo-text">
-            <div class="logo-title">AMASSA</div>
-            <div class="logo-subtitle">Reinigung & Hauswartung</div>
-          </div>
-        </a>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html">Home</a></li>
-          <li>
-            <button class="theme-toggle" id="themeToggle">
-              <i data-lucide="sun" class="theme-icon"></i>
-            </button>
-          </li>
-        </ul>
-        <button class="mobile-toggle" id="mobileToggle">
-          <i data-lucide="menu" style="width: 24px; height: 24px"></i>
-        </button>
-      </div>
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <div><div class="logo-title">AMASSA</div><div class="logo-subtitle">Reinigung & Hauswartung</div></div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reinigung.html">Reinigung</a></li>
+                <li><a href="hauswartung.html">Hauswartung</a></li>
+                <li><a href="referenzen.html">Referenzen</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><button class="theme-toggle" id="themeToggle"><i data-lucide="sun" class="theme-icon"></i></button></li>
+                <li><a href="kontakt.html" class="btn-primary">Offerte</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle"><i data-lucide="menu" style="width: 24px; height: 24px;"></i></button>
+        </div>
     </nav>
 
-    <section
-      style="
-        padding: 10rem 2rem 4rem;
-        margin-top: 80px;
-        background: var(--bg-main);
-      "
-    >
-      <div class="container" style="max-width: 900px">
-        <h1
-          style="
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            background: linear-gradient(
-              135deg,
-              var(--primary) 0%,
-              var(--secondary) 100%
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-          "
-        >
-          Impressum
-        </h1>
-
-        <div
-          style="
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            line-height: 1.8;
-            color: var(--text-primary);
-          "
-        >
-          <h2 style="font-weight: 700; margin-bottom: 1rem">AMASSA GmbH</h2>
-          <p>Romanshornerstrasse 25<br />9300 Wittenbach<br />Schweiz</p>
-
-          <h3 style="font-weight: 700; margin-top: 2rem; margin-bottom: 1rem">
-            Kontakt
-          </h3>
-          <p>Telefon: +41 78 266 25 66<br />E-Mail: info@amassa.ch</p>
-
-          <h3 style="font-weight: 700; margin-top: 2rem; margin-bottom: 1rem">
-            Handelsregister
-          </h3>
-          <p>UID: [To be added]<br />Handelsregister-Nr: [To be added]</p>
-
-          <h3 style="font-weight: 700; margin-top: 2rem; margin-bottom: 1rem">
-            Haftungsausschluss
-          </h3>
-          <p>
-            Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen
-            Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und
-            Vollständigkeit der Informationen.
-          </p>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Impressum</h1>
         </div>
-      </div>
     </section>
 
+    <!-- Content -->
+    <section class="section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="content-card">
+                <h2>Angaben gemäss Art. 8 UWG</h2>
+                
+                <p><strong>AMASSA GmbH</strong></p>
+                <p>
+                    Romanshornerstrasse 25<br>
+                    9300 Wittenbach<br>
+                    Schweiz
+                </p>
+                
+                <h2>Kontakt</h2>
+                <p>
+                    Telefon: <a href="tel:+41782662566" style="color: var(--primary);">+41 78 266 25 66</a><br>
+                    E-Mail: <a href="mailto:info@amassa.ch" style="color: var(--primary);">info@amassa.ch</a>
+                </p>
+                
+                <h2>Handelsregistereintrag</h2>
+                <p>
+                    <strong>Eingetragener Firmenname:</strong> AMASSA GmbH<br>
+                    <strong>Handelsregister-Nummer:</strong> [Bitte eintragen]<br>
+                    <strong>Handelsregisteramt:</strong> [Bitte eintragen]<br>
+                    <strong>UID:</strong> [Bitte eintragen]
+                </p>
+                
+                <h2>Vertretungsberechtigte Personen</h2>
+                <p>
+                    <strong>Geschäftsführer:</strong> [Name eintragen]
+                </p>
+                
+                <h2>Haftungsausschluss</h2>
+                <p>
+                    Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen.
+                </p>
+                <p>
+                    Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.
+                </p>
+                
+                <h2>Haftung für Links</h2>
+                <p>
+                    Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin.
+                </p>
+                
+                <h2>Urheberrechte</h2>
+                <p>
+                    Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich der Firma AMASSA GmbH oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-      <div
-        style="
-          max-width: 1280px;
-          margin: 0 auto;
-          text-align: center;
-          padding: 2rem;
-        "
-      >
-        <p style="color: rgba(255, 255, 255, 0.7)">
-          &copy; 2024 AMASSA GmbH. Alle Rechte vorbehalten.
-        </p>
-      </div>
+        <p>&copy; 2024 AMASSA GmbH. Alle Rechte vorbehalten. | <a href="impressum.html" style="color: white;">Impressum</a> | <a href="datenschutz.html" style="color: white;">Datenschutz</a> | <a href="agb.html" style="color: white;">AGB</a></p>
     </footer>
 
-    <script src="master-scripts-v2.js"></script>
-  </body>
+    <!-- JavaScript -->
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobileToggle').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('active'));
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('amassa-theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        function updateThemeIcon(theme) {
+            themeToggle.querySelector('.theme-icon').setAttribute('data-lucide', theme === 'light' ? 'sun' : 'moon');
+            lucide.createIcons();
+        }
+        updateThemeIcon(savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('amassa-theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    </script>
+</body>
 </html>
