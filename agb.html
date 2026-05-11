@@ -1,115 +1,227 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Allgemeine Geschäftsbedingungen - AMASSA GmbH">
     <title>AGB | AMASSA GmbH</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-      @import url("master-styles-v2.css");
+        /* COLOR PALETTE V2 */
+        :root[data-theme="light"] {
+            --primary: #33539B; --primary-dark: #2F3C8B; --secondary: #4C9ACD; --accent: #D7B07A;
+            --bg-main: #F7F5F0; --surface: #FFFFFF; --surface-alt: #EEF3F8;
+            --text-primary: #2F3E4F; --text-muted: #6E7C8C; --border: #D9E2EC;
+            --shadow-sm: 0 2px 8px rgba(47,60,139,0.08); --shadow-md: 0 8px 24px rgba(47,60,139,0.12);
+        }
+        :root[data-theme="dark"] {
+            --primary: #4C9ACD; --primary-dark: #33539B; --secondary: #8CA9C4; --accent: #D7B07A;
+            --bg-main: #1a202c; --surface: #2d3748; --surface-alt: #374151;
+            --text-primary: #f7fafc; --text-muted: #cbd5e0; --border: #4a5568;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3); --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(--text-primary); line-height: 1.6; transition: all 0.3s; }
+        
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--surface); box-shadow: var(--shadow-sm); }
+        .navbar-container { max-width: 1280px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-primary); }
+        .logo-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; color: white; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); }
+        .logo-title { font-weight: 800; font-size: 1.25rem; }
+        .logo-subtitle { font-size: 0.75rem; color: var(--text-muted); }
+        .nav-menu { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav-menu a { color: var(--text-primary); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .nav-menu a:hover { color: var(--primary); }
+        .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .theme-toggle { background: var(--surface-alt); border: 2px solid var(--border); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; color: var(--text-primary); }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--text-primary); }
+        
+        /* HERO */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); padding: 8rem 2rem 4rem; margin-top: 80px; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: white; margin-bottom: 1rem; }
+        
+        /* CONTENT */
+        .section { padding: 4rem 2rem; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .content-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; box-shadow: var(--shadow-sm); }
+        .content-card h2 { font-size: 1.75rem; font-weight: 700; color: var(--text-primary); margin: 2rem 0 1rem; }
+        .content-card h2:first-child { margin-top: 0; }
+        .content-card h3 { font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin: 1.5rem 0 0.75rem; }
+        .content-card p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+        .content-card ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        .content-card li { color: var(--text-muted); line-height: 1.8; margin-bottom: 0.5rem; }
+        .content-card strong { color: var(--text-primary); }
+        
+        /* FOOTER */
+        .footer { background: linear-gradient(135deg, #1a2332 0%, var(--primary-dark) 100%); color: white; padding: 2rem; text-align: center; }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); flex-direction: column; padding: 2rem; }
+            .nav-menu.active { display: flex; }
+            .mobile-toggle { display: block; }
+            .content-card { padding: 2rem; }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+    <!-- Navigation -->
     <nav class="navbar">
-      <div class="navbar-container">
-        <a href="index.html" class="logo">
-          <div class="logo-icon">A</div>
-          <div class="logo-text">
-            <div class="logo-title">AMASSA</div>
-            <div class="logo-subtitle">Reinigung & Hauswartung</div>
-          </div>
-        </a>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html">Home</a></li>
-          <li>
-            <button class="theme-toggle" id="themeToggle">
-              <i data-lucide="sun" class="theme-icon"></i>
-            </button>
-          </li>
-        </ul>
-        <button class="mobile-toggle" id="mobileToggle">
-          <i data-lucide="menu" style="width: 24px; height: 24px"></i>
-        </button>
-      </div>
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <div><div class="logo-title">AMASSA</div><div class="logo-subtitle">Reinigung & Hauswartung</div></div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reinigung.html">Reinigung</a></li>
+                <li><a href="hauswartung.html">Hauswartung</a></li>
+                <li><a href="referenzen.html">Referenzen</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><button class="theme-toggle" id="themeToggle"><i data-lucide="sun" class="theme-icon"></i></button></li>
+                <li><a href="kontakt.html" class="btn-primary">Offerte</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle"><i data-lucide="menu" style="width: 24px; height: 24px;"></i></button>
+        </div>
     </nav>
 
-    <section
-      style="
-        padding: 10rem 2rem 4rem;
-        margin-top: 80px;
-        background: var(--bg-main);
-      "
-    >
-      <div class="container" style="max-width: 900px">
-        <h1
-          style="
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            background: linear-gradient(
-              135deg,
-              var(--primary) 0%,
-              var(--secondary) 100%
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-          "
-        >
-          Allgemeine Geschäftsbedingungen
-        </h1>
-
-        <div
-          style="
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            line-height: 1.8;
-            color: var(--text-primary);
-          "
-        >
-          <h2 style="font-weight: 700; margin-bottom: 1rem">
-            1. Geltungsbereich
-          </h2>
-          <p>
-            Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge
-            zwischen AMASSA GmbH und dem Auftraggeber. [Content to be completed
-            with full terms]
-          </p>
-
-          <h2 style="font-weight: 700; margin-top: 2rem; margin-bottom: 1rem">
-            2. Leistungsumfang
-          </h2>
-          <p>[To be added]</p>
-
-          <h2 style="font-weight: 700; margin-top: 2rem; margin-bottom: 1rem">
-            3. Preise und Zahlung
-          </h2>
-          <p>[To be added]</p>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Allgemeine Geschäftsbedingungen</h1>
         </div>
-      </div>
     </section>
 
+    <!-- Content -->
+    <section class="section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="content-card">
+                <h2>1. Geltungsbereich</h2>
+                <p>
+                    Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen der AMASSA GmbH (nachfolgend "Auftragnehmer") und ihren Kunden (nachfolgend "Auftraggeber") über Reinigungs- und Hauswartungsdienstleistungen.
+                </p>
+                
+                <h2>2. Vertragsabschluss</h2>
+                <p>
+                    Der Vertrag kommt durch die Annahme der Offerte des Auftragnehmers durch den Auftraggeber zustande. Die Offerte ist 30 Tage gültig, sofern nicht anders angegeben.
+                </p>
+                
+                <h2>3. Leistungsumfang</h2>
+                <p>
+                    Der Umfang der zu erbringenden Leistungen ergibt sich aus der schriftlichen Offerte bzw. dem Vertrag. Zusätzliche Leistungen werden separat vereinbart und berechnet.
+                </p>
+                <ul>
+                    <li>Reinigungsarbeiten werden gemäss Leistungskatalog durchgeführt</li>
+                    <li>Hauswartungsarbeiten umfassen die vertraglich vereinbarten Tätigkeiten</li>
+                    <li>Spezialreinigungen werden nach Aufwand abgerechnet</li>
+                </ul>
+                
+                <h2>4. Preise und Zahlung</h2>
+                <p>
+                    Die Preise verstehen sich in Schweizer Franken (CHF) inklusive der gesetzlichen Mehrwertsteuer. Rechnungen sind innerhalb von 30 Tagen nach Rechnungsdatum ohne Abzug zur Zahlung fällig.
+                </p>
+                <p>
+                    Bei Zahlungsverzug können Verzugszinsen von 5% p.a. sowie Mahngebühren verrechnet werden.
+                </p>
+                
+                <h2>5. Ausführungszeit</h2>
+                <p>
+                    Die Arbeiten werden zu den vereinbarten Zeiten durchgeführt. Bei Verhinderung des Auftraggebers (z.B. kein Zugang zur Immobilie) können Wartezeiten und Wegkosten verrechnet werden.
+                </p>
+                
+                <h2>6. Pflichten des Auftraggebers</h2>
+                <ul>
+                    <li>Zugang zu den zu reinigenden Räumlichkeiten gewährleisten</li>
+                    <li>Wasser- und Stromanschlüsse zur Verfügung stellen</li>
+                    <li>Bei Spezialreinigungen: Räumung der Objekte</li>
+                    <li>Mängel unverzüglich melden</li>
+                </ul>
+                
+                <h2>7. Haftung</h2>
+                <p>
+                    Der Auftragnehmer haftet für Schäden, die nachweislich durch grobe Fahrlässigkeit oder Vorsatz seiner Mitarbeiter verursacht wurden. Die Haftung ist auf die Deckungssumme der Betriebshaftpflichtversicherung begrenzt.
+                </p>
+                <p>
+                    Schäden müssen innerhalb von 24 Stunden nach Feststellung schriftlich gemeldet werden.
+                </p>
+                
+                <h2>8. Gewährleistung</h2>
+                <p>
+                    Bei Baureinigungen gilt: 100% Abnahmegarantie oder kostenlose Nachbesserung. Bei anderen Dienstleistungen werden festgestellte Mängel innerhalb von 48 Stunden behoben.
+                </p>
+                
+                <h2>9. Vertragsdauer und Kündigung</h2>
+                <p>
+                    <strong>Unterhaltsreinigung:</strong> Mindestvertragsdauer 3 Monate. Kündigungsfrist 1 Monat auf Ende des Kalendermonats.<br>
+                    <strong>Hauswartung:</strong> Mindestvertragsdauer 12 Monate. Kündigungsfrist 3 Monate auf Ende des Kalendermonats.<br>
+                    <strong>Spezialreinigungen:</strong> Einzelauftrag ohne Kündigungsfrist.
+                </p>
+                
+                <h2>10. Datenschutz</h2>
+                <p>
+                    Der Auftragnehmer verpflichtet sich, alle im Zusammenhang mit dem Auftrag bekannt gewordenen Daten vertraulich zu behandeln und gemäss Datenschutzgesetz zu verarbeiten.
+                </p>
+                
+                <h2>11. Schlussbestimmungen</h2>
+                <p>
+                    Änderungen und Ergänzungen des Vertrages bedürfen der Schriftform. Sollten einzelne Bestimmungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+                </p>
+                <p>
+                    Es gilt Schweizer Recht. Gerichtsstand ist Wittenbach (SG).
+                </p>
+                
+                <h2>12. Kontakt</h2>
+                <p>
+                    <strong>AMASSA GmbH</strong><br>
+                    Romanshornerstrasse 25<br>
+                    9300 Wittenbach<br>
+                    Schweiz
+                </p>
+                <p>
+                    Telefon: +41 78 266 25 66<br>
+                    E-Mail: info@amassa.ch
+                </p>
+                
+                <p style="margin-top: 2rem;"><em>Stand: Januar 2024</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-      <div
-        style="
-          max-width: 1280px;
-          margin: 0 auto;
-          text-align: center;
-          padding: 2rem;
-        "
-      >
-        <p style="color: rgba(255, 255, 255, 0.7)">
-          &copy; 2024 AMASSA GmbH. Alle Rechte vorbehalten.
-        </p>
-      </div>
+        <p>&copy; 2024 AMASSA GmbH. Alle Rechte vorbehalten. | <a href="impressum.html" style="color: white;">Impressum</a> | <a href="datenschutz.html" style="color: white;">Datenschutz</a> | <a href="agb.html" style="color: white;">AGB</a></p>
     </footer>
 
-    <script src="master-scripts-v2.js"></script>
-  </body>
+    <!-- JavaScript -->
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobileToggle').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('active'));
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('amassa-theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        function updateThemeIcon(theme) {
+            themeToggle.querySelector('.theme-icon').setAttribute('data-lucide', theme === 'light' ? 'sun' : 'moon');
+            lucide.createIcons();
+        }
+        updateThemeIcon(savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('amassa-theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    </script>
+</body>
 </html>
