@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flexible Reinigungsabos & Pakete von AMASSA in St. Gallen. Massgeschneiderte Lösungen für jeden Bedarf. ☎ +41 78 266 25 66">
+    <title>Abos & Pakete | AMASSA GmbH St. Gallen</title>
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* COLOR PALETTE V2 */
+        :root[data-theme="light"] {
+            --primary: #33539B; --primary-dark: #2F3C8B; --secondary: #4C9ACD; --accent: #D7B07A;
+            --bg-main: #F7F5F0; --surface: #FFFFFF; --surface-alt: #EEF3F8;
+            --text-primary: #2F3E4F; --text-muted: #6E7C8C; --border: #D9E2EC;
+            --shadow-sm: 0 2px 8px rgba(47,60,139,0.08); --shadow-md: 0 8px 24px rgba(47,60,139,0.12);
+        }
+        :root[data-theme="dark"] {
+            --primary: #4C9ACD; --primary-dark: #33539B; --secondary: #8CA9C4; --accent: #D7B07A;
+            --bg-main: #1a202c; --surface: #2d3748; --surface-alt: #374151;
+            --text-primary: #f7fafc; --text-muted: #cbd5e0; --border: #4a5568;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3); --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(--text-primary); line-height: 1.6; transition: all 0.3s; }
+        
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--surface); box-shadow: var(--shadow-sm); }
+        .navbar-container { max-width: 1280px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-primary); }
+        .logo-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; color: white; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); }
+        .logo-title { font-weight: 800; font-size: 1.25rem; }
+        .logo-subtitle { font-size: 0.75rem; color: var(--text-muted); }
+        .nav-menu { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav-menu a { color: var(--text-primary); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .nav-menu a:hover { color: var(--primary); }
+        .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .theme-toggle { background: var(--surface-alt); border: 2px solid var(--border); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; color: var(--text-primary); }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--text-primary); }
+        
+        /* HERO */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); padding: 10rem 2rem 6rem; margin-top: 80px; text-align: center; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; color: white; margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.5rem; color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto; }
+        
+        /* SECTIONS */
+        .section { padding: 6rem 2rem; }
+        .container { max-width: 1280px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-tag { display: inline-block; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section-description { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+        
+        /* PRICING CARDS */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .pricing-card { background: var(--surface); border: 2px solid var(--border); border-radius: 20px; padding: 2.5rem; text-align: center; transition: all 0.3s; box-shadow: var(--shadow-sm); }
+        .pricing-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+        .pricing-card.featured { border-color: var(--accent); border-width: 3px; position: relative; }
+        .featured-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--accent) 0%, #C9A066 100%); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.875rem; font-weight: 700; }
+        .pricing-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+        .pricing-title { font-size: 1.75rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1rem; }
+        .pricing-price { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; }
+        .pricing-period { color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; }
+        .pricing-features { list-style: none; margin-bottom: 2rem; text-align: left; }
+        .pricing-features li { display: flex; gap: 0.5rem; margin-bottom: 1rem; color: var(--text-primary); }
+        .pricing-button { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 1rem 2rem; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s; }
+        .pricing-button:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        
+        /* INFO SECTION */
+        .info-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+        .info-card h3 { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+        .info-card p { color: var(--text-muted); line-height: 1.8; }
+        
+        /* CTA */
+        .cta-section { padding: 6rem 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%); text-align: center; }
+        .cta-section h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: white; margin-bottom: 1.5rem; }
+        .cta-section p { font-size: 1.25rem; color: rgba(255,255,255,0.95); margin-bottom: 2.5rem; }
+        .btn-accent { background: linear-gradient(135deg, var(--accent) 0%, #C9A066 100%); color: var(--text-primary); padding: 1.25rem 2.5rem; border-radius: 12px; font-weight: 700; font-size: 1.125rem; text-decoration: none; display: inline-block; transition: all 0.3s; }
+        
+        /* FOOTER */
+        .footer { background: linear-gradient(135deg, #1a2332 0%, var(--primary-dark) 100%); color: white; padding: 4rem 2rem 2rem; }
+        .footer-bottom { text-align: center; padding: 2rem; color: rgba(255,255,255,0.7); }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); flex-direction: column; padding: 2rem; }
+            .nav-menu.active { display: flex; }
+            .mobile-toggle { display: block; }
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <div><div class="logo-title">AMASSA</div><div class="logo-subtitle">Reinigung & Hauswartung</div></div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reinigung.html">Reinigung</a></li>
+                <li><a href="hauswartung.html">Hauswartung</a></li>
+                <li><a href="abos-pakete.html" style="color: var(--primary); font-weight: 600;">Abos & Pakete</a></li>
+                <li><a href="referenzen.html">Referenzen</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><button class="theme-toggle" id="themeToggle"><i data-lucide="sun" class="theme-icon"></i></button></li>
+                <li><a href="kontakt.html" class="btn-primary">Offerte</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle"><i data-lucide="menu" style="width: 24px; height: 24px;"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Abos & Pakete</h1>
+            <p>Flexible Reinigungslösungen für jeden Bedarf</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">UNSERE PAKETE</div>
+                <h2 class="section-title">Wählen Sie Ihr Paket</h2>
+                <p class="section-description">Massgeschneiderte Reinigungslösungen für Büros, Praxen und Gewerbeflächen</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Package 1: Basic -->
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i data-lucide="package" style="width: 32px; height: 32px; color: white;"></i>
+                    </div>
+                    <h3 class="pricing-title">Basic</h3>
+                    <div class="pricing-price">Auf Anfrage</div>
+                    <div class="pricing-period">Individuelle Preisgestaltung</div>
+                    <ul class="pricing-features">
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--primary); flex-shrink: 0;"></i>
+                            <span>Wöchentliche Reinigung</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--primary); flex-shrink: 0;"></i>
+                            <span>Grundreinigung Böden</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--primary); flex-shrink: 0;"></i>
+                            <span>Papierkorb-Entleerung</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--primary); flex-shrink: 0;"></i>
+                            <span>Sanitärreinigung</span>
+                        </li>
+                    </ul>
+                    <a href="kontakt.html" class="pricing-button">Offerte anfragen</a>
+                </div>
+
+                <!-- Package 2: Professional (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">BELIEBT</div>
+                    <div class="pricing-icon">
+                        <i data-lucide="briefcase" style="width: 32px; height: 32px; color: white;"></i>
+                    </div>
+                    <h3 class="pricing-title">Professional</h3>
+                    <div class="pricing-price">Auf Anfrage</div>
+                    <div class="pricing-period">Individuelle Preisgestaltung</div>
+                    <ul class="pricing-features">
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--accent); flex-shrink: 0;"></i>
+                            <span>Alles aus Basic</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--accent); flex-shrink: 0;"></i>
+                            <span>Tägliche Reinigung</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--accent); flex-shrink: 0;"></i>
+                            <span>Küchen & Pausenräume</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--accent); flex-shrink: 0;"></i>
+                            <span>Fensterreinigung (monatlich)</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--accent); flex-shrink: 0;"></i>
+                            <span>Persönlicher Ansprechpartner</span>
+                        </li>
+                    </ul>
+                    <a href="kontakt.html" class="pricing-button">Offerte anfragen</a>
+                </div>
+
+                <!-- Package 3: Premium -->
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i data-lucide="star" style="width: 32px; height: 32px; color: white;"></i>
+                    </div>
+                    <h3 class="pricing-title">Premium</h3>
+                    <div class="pricing-price">Auf Anfrage</div>
+                    <div class="pricing-period">Individuelle Preisgestaltung</div>
+                    <ul class="pricing-features">
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--primary); flex-shrink: 0;"></i>
+                            <span>Alles aus Professional</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--primary); flex-shrink: 0;"></i>
+                            <span>24/7 Notfallservice</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--primary); flex-shrink: 0;"></i>
+                            <span>Spezialreinigungen inklusive</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--primary); flex-shrink: 0;"></i>
+                            <span>Qualitätskontrolle</span>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 20px; height: 20px; color: var(--primary); flex-shrink: 0;"></i>
+                            <span>Dedicated Account Manager</span>
+                        </li>
+                    </ul>
+                    <a href="kontakt.html" class="pricing-button">Offerte anfragen</a>
+                </div>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="info-card">
+                <h3>
+                    <i data-lucide="info" style="width: 24px; height: 24px; color: var(--primary);"></i>
+                    Massgeschneiderte Lösungen
+                </h3>
+                <p>Alle Pakete werden individuell auf Ihre Bedürfnisse zugeschnitten. Die finale Preisgestaltung richtet sich nach Ihrer Fläche, Frequenz und gewünschten Services. Kontaktieren Sie uns für eine kostenlose, unverbindliche Offerte.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>
+                    <i data-lucide="calendar" style="width: 24px; height: 24px; color: var(--primary);"></i>
+                    Flexible Vertragsgestaltung
+                </h3>
+                <p>Wählen Sie zwischen monatlichen, jährlichen oder individuellen Vertragsmodellen. Keine versteckten Kosten, keine Mindestlaufzeit bei monatlicher Abrechnung.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>
+                    <i data-lucide="shield-check" style="width: 24px; height: 24px; color: var(--primary);"></i>
+                    Zufriedenheitsgarantie
+                </h3>
+                <p>Wir stehen zu 100% hinter unserer Arbeit. Sollten Sie nicht zufrieden sein, bessern wir kostenfrei nach oder erstatten den Betrag zurück.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Bereit für saubere Räume?</h2>
+            <p>Fordern Sie jetzt Ihre persönliche Offerte an</p>
+            <a href="kontakt.html" class="btn-accent">Kostenlose Offerte anfragen</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2024 AMASSA GmbH. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobileToggle').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('active'));
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('amassa-theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        function updateThemeIcon(theme) {
+            themeToggle.querySelector('.theme-icon').setAttribute('data-lucide', theme === 'light' ? 'sun' : 'moon');
+            lucide.createIcons();
+        }
+        updateThemeIcon(savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('amassa-theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    </script>
+</body>
+</html>
