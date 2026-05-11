@@ -1,568 +1,242 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Kontaktieren Sie AMASSA für professionelle Reinigung & Hauswartung in St. Gallen. ☎ +41 78 266 25 66 | ✉ info@amassa.ch"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktieren Sie AMASSA für professionelle Reinigung & Hauswartung in St. Gallen. ☎ +41 78 266 25 66 | ✉ info@amassa.ch">
     <title>Kontakt | AMASSA GmbH St. Gallen</title>
-
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-
+    
     <style>
-      /* COLOR PALETTE V2 */
-      :root[data-theme="light"] {
-        --primary: #33539b;
-        --primary-dark: #2f3c8b;
-        --secondary: #4c9acd;
-        --accent: #d7b07a;
-        --bg-main: #f7f5f0;
-        --surface: #ffffff;
-        --surface-alt: #eef3f8;
-        --text-primary: #2f3e4f;
-        --text-muted: #6e7c8c;
-        --border: #d9e2ec;
-        --shadow-sm: 0 2px 8px rgba(47, 60, 139, 0.08);
-        --shadow-md: 0 8px 24px rgba(47, 60, 139, 0.12);
-      }
-      :root[data-theme="dark"] {
-        --primary: #4c9acd;
-        --primary-dark: #33539b;
-        --secondary: #8ca9c4;
-        --accent: #d7b07a;
-        --bg-main: #1a202c;
-        --surface: #2d3748;
-        --surface-alt: #374151;
-        --text-primary: #f7fafc;
-        --text-muted: #cbd5e0;
-        --border: #4a5568;
-        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-      }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-        background: var(--bg-main);
-        color: var(--text-primary);
-        line-height: 1.6;
-        transition: all 0.3s;
-      }
-
-      /* NAVIGATION */
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        background: var(--surface);
-        box-shadow: var(--shadow-sm);
-      }
-      .navbar-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 1rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        text-decoration: none;
-        color: var(--text-primary);
-      }
-      .logo-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 1.5rem;
-        color: white;
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--secondary) 100%
-        );
-      }
-      .logo-title {
-        font-weight: 800;
-        font-size: 1.25rem;
-      }
-      .logo-subtitle {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-      }
-      .nav-menu {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        list-style: none;
-      }
-      .nav-menu a {
-        color: var(--text-primary);
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.2s;
-      }
-      .nav-menu a:hover {
-        color: var(--primary);
-      }
-      .btn-primary {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--primary-dark) 100%
-        );
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 12px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.3s;
-      }
-      .theme-toggle {
-        background: var(--surface-alt);
-        border: 2px solid var(--border);
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s;
-        color: var(--text-primary);
-      }
-      .mobile-toggle {
-        display: none;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--text-primary);
-      }
-
-      /* HERO */
-      .hero {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--secondary) 100%
-        );
-        padding: 10rem 2rem 6rem;
-        margin-top: 80px;
-        text-align: center;
-      }
-      .hero h1 {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 800;
-        color: white;
-        margin-bottom: 1.5rem;
-      }
-      .hero p {
-        font-size: 1.5rem;
-        color: rgba(255, 255, 255, 0.95);
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      /* CONTACT INFO CARDS */
-      .section {
-        padding: 6rem 2rem;
-      }
-      .container {
-        max-width: 1280px;
-        margin: 0 auto;
-      }
-      .contact-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-bottom: 4rem;
-      }
-      .contact-card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 2rem;
-        text-align: center;
-        transition: all 0.3s;
-        box-shadow: var(--shadow-sm);
-      }
-      .contact-card:hover {
-        box-shadow: var(--shadow-md);
-        transform: translateY(-4px);
-      }
-      .contact-icon {
-        width: 64px;
-        height: 64px;
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--secondary) 100%
-        );
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.5rem;
-      }
-      .contact-card h3 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        color: var(--text-primary);
-      }
-      .contact-card a {
-        color: var(--primary);
-        font-weight: 600;
-        font-size: 1.125rem;
-        text-decoration: none;
-      }
-      .contact-card p {
-        color: var(--text-muted);
-        margin-top: 0.5rem;
-        font-size: 0.875rem;
-      }
-
-      /* CONTACT FORM */
-      .form-container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 3rem;
-        box-shadow: var(--shadow-md);
-      }
-      .form-title {
-        font-size: 2rem;
-        font-weight: 800;
-        text-align: center;
-        margin-bottom: 1rem;
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--secondary) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .form-description {
-        text-align: center;
-        color: var(--text-muted);
-        margin-bottom: 2rem;
-      }
-      .form-grid {
-        display: grid;
-        gap: 1.5rem;
-      }
-      .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-      }
-      .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-        color: var(--text-primary);
-      }
-      .form-group input,
-      .form-group textarea,
-      .form-group select {
-        width: 100%;
-        padding: 1rem;
-        border: 2px solid var(--border);
-        border-radius: 12px;
-        background: var(--surface);
-        color: var(--text-primary);
-        font-family: "Inter", sans-serif;
-        transition: border-color 0.3s;
-      }
-      .form-group input:focus,
-      .form-group textarea:focus,
-      .form-group select:focus {
-        outline: none;
-        border-color: var(--primary);
-      }
-      .form-submit {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--primary-dark) 100%
-        );
-        color: white;
-        width: 100%;
-        padding: 1.25rem;
-        border-radius: 12px;
-        font-weight: 700;
-        font-size: 1.125rem;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s;
-      }
-      .form-submit:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-      }
-      .form-note {
-        text-align: center;
-        font-size: 0.875rem;
-        color: var(--text-muted);
-      }
-
-      /* FOOTER */
-      .footer {
-        background: linear-gradient(
-          135deg,
-          #1a2332 0%,
-          var(--primary-dark) 100%
-        );
-        color: white;
-        padding: 4rem 2rem 2rem;
-      }
-      .footer-bottom {
-        text-align: center;
-        padding: 2rem;
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 768px) {
-        .nav-menu {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          background: var(--surface);
-          flex-direction: column;
-          padding: 2rem;
+        /* COLOR PALETTE V2 */
+        :root[data-theme="light"] {
+            --primary: #33539B; --primary-dark: #2F3C8B; --secondary: #4C9ACD; --accent: #D7B07A;
+            --bg-main: #F7F5F0; --surface: #FFFFFF; --surface-alt: #EEF3F8;
+            --text-primary: #2F3E4F; --text-muted: #6E7C8C; --border: #D9E2EC;
+            --shadow-sm: 0 2px 8px rgba(47,60,139,0.08); --shadow-md: 0 8px 24px rgba(47,60,139,0.12);
         }
-        .nav-menu.active {
-          display: flex;
+        :root[data-theme="dark"] {
+            --primary: #4C9ACD; --primary-dark: #33539B; --secondary: #8CA9C4; --accent: #D7B07A;
+            --bg-main: #1a202c; --surface: #2d3748; --surface-alt: #374151;
+            --text-primary: #f7fafc; --text-muted: #cbd5e0; --border: #4a5568;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3); --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
         }
-        .mobile-toggle {
-          display: block;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(--text-primary); line-height: 1.6; transition: all 0.3s; }
+        
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--surface); box-shadow: var(--shadow-sm); }
+        .navbar-container { max-width: 1280px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text-primary); }
+        .logo-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.5rem; color: white; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); }
+        .logo-title { font-weight: 800; font-size: 1.25rem; }
+        .logo-subtitle { font-size: 0.75rem; color: var(--text-muted); }
+        .nav-menu { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav-menu a { color: var(--text-primary); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .nav-menu a:hover { color: var(--primary); }
+        .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #FFFFFF !important; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .theme-toggle { background: var(--surface-alt); border: 2px solid var(--border); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; color: var(--text-primary); }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--text-primary); }
+        
+        /* HERO */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); padding: 10rem 2rem 6rem; margin-top: 80px; text-align: center; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; color: white; margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.5rem; color: rgba(255,255,255,0.95); max-width: 800px; margin: 0 auto; }
+        
+        /* CONTACT INFO CARDS */
+        .section { padding: 6rem 2rem; }
+        .container { max-width: 1280px; margin: 0 auto; }
+        .contact-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s; box-shadow: var(--shadow-sm); }
+        .contact-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+        .contact-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+        .contact-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .contact-card a { color: var(--primary); font-weight: 600; font-size: 1.125rem; text-decoration: none; }
+        .contact-card p { color: var(--text-muted); margin-top: 0.5rem; font-size: 0.875rem; }
+        
+        /* CONTACT FORM */
+        .form-container { max-width: 800px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; box-shadow: var(--shadow-md); }
+        .form-title { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 1rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .form-description { text-align: center; color: var(--text-muted); margin-bottom: 2rem; }
+        .form-grid { display: grid; gap: 1.5rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary); }
+        .form-group input,
+        .form-group textarea,
+        .form-group select { width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text-primary); font-family: 'Inter', sans-serif; transition: border-color 0.3s; }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus { outline: none; border-color: var(--primary); }
+        .form-submit { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; width: 100%; padding: 1.25rem; border-radius: 12px; font-weight: 700; font-size: 1.125rem; border: none; cursor: pointer; transition: all 0.3s; }
+        .form-submit:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .form-note { text-align: center; font-size: 0.875rem; color: var(--text-muted); }
+        
+        /* FOOTER */
+        .footer { background: linear-gradient(135deg, #1a2332 0%, var(--primary-dark) 100%); color: white; padding: 4rem 2rem 2rem; }
+        .footer-bottom { text-align: center; padding: 2rem; color: rgba(255,255,255,0.7); }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); flex-direction: column; padding: 2rem; }
+            .nav-menu.active { display: flex; }
+            .mobile-toggle { display: block; }
+            .form-row { grid-template-columns: 1fr; }
         }
-        .form-row {
-          grid-template-columns: 1fr;
-        }
-      }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Navigation -->
     <nav class="navbar">
-      <div class="navbar-container">
-        <a href="index.html" class="logo">
-          <div class="logo-icon">A</div>
-          <div>
-            <div class="logo-title">AMASSA</div>
-            <div class="logo-subtitle">Reinigung & Hauswartung</div>
-          </div>
-        </a>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="reinigung.html">Reinigung</a></li>
-          <li><a href="hauswartung.html">Hauswartung</a></li>
-          <li><a href="abos-pakete.html">Abos</a></li>
-          <li><a href="referenzen.html">Referenzen</a></li>
-          <li>
-            <a
-              href="kontakt.html"
-              style="color: var(--primary); font-weight: 600"
-              >Kontakt</a
-            >
-          </li>
-          <li>
-            <button class="theme-toggle" id="themeToggle">
-              <i data-lucide="sun" class="theme-icon"></i>
-            </button>
-          </li>
-          <li><a href="kontakt.html" class="btn-primary">Offerte</a></li>
-        </ul>
-        <button class="mobile-toggle" id="mobileToggle">
-          <i data-lucide="menu" style="width: 24px; height: 24px"></i>
-        </button>
-      </div>
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">A</div>
+                <div><div class="logo-title">AMASSA</div><div class="logo-subtitle">Reinigung & Hauswartung</div></div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reinigung.html">Reinigung</a></li>
+                <li><a href="hauswartung.html">Hauswartung</a></li>
+                <li><a href="abos-pakete.html">Abos</a></li>
+                <li><a href="referenzen.html">Referenzen</a></li>
+                <li><a href="kontakt.html" style="color: var(--primary); font-weight: 600;">Kontakt</a></li>
+                <li><button class="theme-toggle" id="themeToggle"><i data-lucide="sun" class="theme-icon"></i></button></li>
+                <li><a href="kontakt.html" class="btn-primary">Offerte</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle"><i data-lucide="menu" style="width: 24px; height: 24px;"></i></button>
+        </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
-      <div class="container">
-        <h1>Kontaktieren Sie uns</h1>
-        <p>Wir freuen uns auf Ihre Anfrage und beraten Sie gerne</p>
-      </div>
+        <div class="container">
+            <h1>Kontaktieren Sie uns</h1>
+            <p>Wir freuen uns auf Ihre Anfrage und beraten Sie gerne</p>
+        </div>
     </section>
 
     <!-- Contact Info Cards -->
-    <section class="section" style="background: var(--bg-main)">
-      <div class="container">
-        <div class="contact-cards">
-          <!-- Phone -->
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i
-                data-lucide="phone"
-                style="width: 32px; height: 32px; color: white"
-              ></i>
-            </div>
-            <h3>Telefon</h3>
-            <a href="tel:+41782662566">+41 78 266 25 66</a>
-            <p>Mo-Fr: 07:00-18:00</p>
-          </div>
+    <section class="section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="contact-cards">
+                <!-- Phone -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="phone" style="width: 32px; height: 32px; color: white;"></i>
+                    </div>
+                    <h3>Telefon</h3>
+                    <a href="tel:+41782662566">+41 78 266 25 66</a>
+                    <p>Mo-Fr: 07:00-18:00</p>
+                </div>
 
-          <!-- Email -->
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i
-                data-lucide="mail"
-                style="width: 32px; height: 32px; color: white"
-              ></i>
-            </div>
-            <h3>E-Mail</h3>
-            <a href="mailto:info@amassa.ch">info@amassa.ch</a>
-            <p>24/7 erreichbar</p>
-          </div>
+                <!-- Email -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="mail" style="width: 32px; height: 32px; color: white;"></i>
+                    </div>
+                    <h3>E-Mail</h3>
+                    <a href="mailto:info@amassa.ch">info@amassa.ch</a>
+                    <p>24/7 erreichbar</p>
+                </div>
 
-          <!-- Address -->
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i
-                data-lucide="map-pin"
-                style="width: 32px; height: 32px; color: white"
-              ></i>
+                <!-- Address -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i data-lucide="map-pin" style="width: 32px; height: 32px; color: white;"></i>
+                    </div>
+                    <h3>Adresse</h3>
+                    <p style="color: var(--text-primary); font-weight: 600;">Romanshornerstrasse 25</p>
+                    <p style="color: var(--text-primary); font-weight: 600;">9300 Wittenbach</p>
+                </div>
             </div>
-            <h3>Adresse</h3>
-            <p style="color: var(--text-primary); font-weight: 600">
-              Romanshornerstrasse 25
-            </p>
-            <p style="color: var(--text-primary); font-weight: 600">
-              9300 Wittenbach
-            </p>
-          </div>
+
+            <!-- Contact Form -->
+            <div class="form-container">
+                <h2 class="form-title">Kostenlose Offerte anfragen</h2>
+                <p class="form-description">Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+
+                <form class="form-grid" method="POST" action="process-contact.php">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vorname">Vorname *</label>
+                            <input type="text" id="vorname" name="vorname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nachname">Nachname *</label>
+                            <input type="text" id="nachname" name="nachname" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefon">Telefon *</label>
+                        <input type="tel" id="telefon" name="telefon" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Gewünschter Service *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Bitte wählen...</option>
+                            <option value="unterhaltsreinigung">Unterhaltsreinigung</option>
+                            <option value="baureinigung">Baureinigung</option>
+                            <option value="endreinigung">Endreinigung / Umzug</option>
+                            <option value="fensterreinigung">Fensterreinigung</option>
+                            <option value="hauswartung">Hauswartung</option>
+                            <option value="other">Andere</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nachricht">Ihre Nachricht</label>
+                        <textarea id="nachricht" name="nachricht" rows="5" placeholder="Beschreiben Sie uns Ihr Anliegen..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Offerte anfragen</button>
+
+                    <p class="form-note">* Pflichtfelder | Ihre Daten werden vertraulich behandelt</p>
+                </form>
+            </div>
         </div>
-
-        <!-- Contact Form -->
-        <div class="form-container">
-          <h2 class="form-title">Kostenlose Offerte anfragen</h2>
-          <p class="form-description">
-            Füllen Sie das Formular aus und wir melden uns innerhalb von 24
-            Stunden bei Ihnen.
-          </p>
-
-          <form class="form-grid" method="POST" action="process-contact.php">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="vorname">Vorname *</label>
-                <input type="text" id="vorname" name="vorname" required />
-              </div>
-              <div class="form-group">
-                <label for="nachname">Nachname *</label>
-                <input type="text" id="nachname" name="nachname" required />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="email">E-Mail *</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-
-            <div class="form-group">
-              <label for="telefon">Telefon *</label>
-              <input type="tel" id="telefon" name="telefon" required />
-            </div>
-
-            <div class="form-group">
-              <label for="service">Gewünschter Service *</label>
-              <select id="service" name="service" required>
-                <option value="">Bitte wählen...</option>
-                <option value="unterhaltsreinigung">Unterhaltsreinigung</option>
-                <option value="baureinigung">Baureinigung</option>
-                <option value="endreinigung">Endreinigung / Umzug</option>
-                <option value="fensterreinigung">Fensterreinigung</option>
-                <option value="hauswartung">Hauswartung</option>
-                <option value="other">Andere</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="nachricht">Ihre Nachricht</label>
-              <textarea
-                id="nachricht"
-                name="nachricht"
-                rows="5"
-                placeholder="Beschreiben Sie uns Ihr Anliegen..."
-              ></textarea>
-            </div>
-
-            <button type="submit" class="form-submit">Offerte anfragen</button>
-
-            <p class="form-note">
-              * Pflichtfelder | Ihre Daten werden vertraulich behandelt
-            </p>
-          </form>
-        </div>
-      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-bottom">
-        <p>&copy; 2024 AMASSA GmbH. Alle Rechte vorbehalten.</p>
-      </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AMASSA GmbH. Alle Rechte vorbehalten.</p>
+        </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-      lucide.createIcons();
-      document
-        .getElementById("mobileToggle")
-        .addEventListener("click", () =>
-          document.getElementById("navMenu").classList.toggle("active")
-        );
-
-      // Theme toggle
-      const themeToggle = document.getElementById("themeToggle");
-      const html = document.documentElement;
-      const savedTheme = localStorage.getItem("amassa-theme") || "light";
-      html.setAttribute("data-theme", savedTheme);
-      function updateThemeIcon(theme) {
-        themeToggle
-          .querySelector(".theme-icon")
-          .setAttribute("data-lucide", theme === "light" ? "sun" : "moon");
         lucide.createIcons();
-      }
-      updateThemeIcon(savedTheme);
-      themeToggle.addEventListener("click", () => {
-        const currentTheme = html.getAttribute("data-theme");
-        const newTheme = currentTheme === "light" ? "dark" : "light";
-        html.setAttribute("data-theme", newTheme);
-        localStorage.setItem("amassa-theme", newTheme);
-        updateThemeIcon(newTheme);
-      });
+        document.getElementById('mobileToggle').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('active'));
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('amassa-theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        function updateThemeIcon(theme) {
+            themeToggle.querySelector('.theme-icon').setAttribute('data-lucide', theme === 'light' ? 'sun' : 'moon');
+            lucide.createIcons();
+        }
+        updateThemeIcon(savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('amassa-theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
     </script>
-  </body>
+</body>
 </html>
