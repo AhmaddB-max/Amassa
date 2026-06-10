@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+  <head>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("amassa-theme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Büroreinigung St. Gallen | Professionelle Reinigung für Büros | AMASSA</title>
+    <meta
+      name="description"
+      content="Büroreinigung in St. Gallen und Umgebung: zuverlässig, diskret und flexibel. Regelmäßige Reinigung für Büros, Praxen und Geschäftsräume. Jetzt Offerte anfragen!"
+    />
+    <meta
+      name="keywords"
+      content="Büroreinigung St. Gallen, Büroreinigung Zürich, Geschäftsräume reinigen, Unterhaltsreinigung Büro, Reinigungsfirma Büro"
+    />
+    <link rel="canonical" href="https://www.amassa.ch/bueroreinigung.html" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "amassa-blue": "#2B4C7E",
+              "amassa-blue-light": "#3D5A8F",
+              "amassa-teal": "#5B9BD5",
+              "amassa-green": "#70AD47",
+              "amassa-accent": "#FFC000",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+      .nav-blur {
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.96);
+      }
+      .image-placeholder {
+        background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed #cbd5e0;
+        color: #64748b;
+      }
+      .service-detail-card {
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+      }
+      .service-detail-card:hover {
+        border-left-color: #2b4c7e;
+        transform: translateX(4px);
+      }
+
+      /* Hero Top Bar (Reinigung - Blue) */
+      :root {
+        --primary: #2b4c7e;
+        --secondary: #5b9bd5;
+        --accent: #ffc000;
+        --text-primary: #1f2937;
+      }
+      .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        padding: 10rem 2rem 6rem;
+        margin-top: 80px;
+        text-align: center;
+      }
+      .hero .container { max-width: 1280px; margin: 0 auto; }
+      .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1.5rem;
+      }
+      .hero p {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.95);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    
+      /* ============ Dark / Light Mode ============ */
+      html[data-theme="dark"] {
+        color-scheme: dark;
+      }
+      html[data-theme="dark"] body {
+        background-color: #0f172a;
+      }
+      html[data-theme="dark"] .bg-white {
+        background-color: #1a2332 !important;
+      }
+      html[data-theme="dark"] .bg-gray-50 {
+        background-color: #141b2b !important;
+      }
+      html[data-theme="dark"] .bg-gray-100 {
+        background-color: #1e293b !important;
+      }
+      html[data-theme="dark"] .bg-blue-50 {
+        background-color: rgba(91, 155, 213, 0.12) !important;
+      }
+      html[data-theme="dark"] .bg-blue-100 {
+        background-color: rgba(91, 155, 213, 0.2) !important;
+      }
+      html[data-theme="dark"] .text-gray-900 {
+        color: #f1f5f9 !important;
+      }
+      html[data-theme="dark"] .text-gray-800 {
+        color: #e2e8f0 !important;
+      }
+      html[data-theme="dark"] .text-gray-700 {
+        color: #cbd5e1 !important;
+      }
+      html[data-theme="dark"] .text-gray-600,
+      html[data-theme="dark"] .text-gray-500,
+      html[data-theme="dark"] .text-gray-400 {
+        color: #94a3b8 !important;
+      }
+      html[data-theme="dark"] .border-gray-100,
+      html[data-theme="dark"] .border-gray-200,
+      html[data-theme="dark"] .border-gray-300,
+      html[data-theme="dark"] .border-white {
+        border-color: #2d3b4f !important;
+      }
+      html[data-theme="dark"] .image-placeholder {
+        background: linear-gradient(135deg, #1e293b 0%, #2d3b4f 100%) !important;
+        color: #94a3b8 !important;
+        border-color: #334155 !important;
+      }
+      html[data-theme="dark"] #navbar.bg-white {
+        background-color: rgba(17, 24, 39, 0.97) !important;
+      }
+      html[data-theme="dark"] #navbar.nav-blur {
+        background-color: rgba(17, 24, 39, 0.85) !important;
+      }
+      html[data-theme="dark"] .shadow-md,
+      html[data-theme="dark"] .shadow-lg,
+      html[data-theme="dark"] .shadow-xl,
+      html[data-theme="dark"] .shadow-2xl {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+      }
+      html[data-theme="dark"] input,
+      html[data-theme="dark"] select,
+      html[data-theme="dark"] textarea {
+        background-color: #1a2332 !important;
+        color: #e2e8f0 !important;
+        border-color: #2d3b4f !important;
+      }
+      html[data-theme="dark"] ::placeholder {
+        color: #64748b !important;
+      }
+
+      .theme-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 2px solid #e5e7eb;
+        background: #f9fafb;
+        color: #2b4c7e;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+      .theme-toggle-btn:hover {
+        border-color: #2b4c7e;
+        transform: scale(1.05);
+      }
+      .theme-toggle-mobile-btn {
+        width: 100%;
+        height: auto;
+        padding: 0.75rem 1rem;
+        margin-top: 0.5rem;
+        justify-content: flex-start;
+      }
+      html[data-theme="dark"] .theme-toggle-btn {
+        background: #1e293b;
+        border-color: #334155;
+        color: #ffc000;
+      }
+  </style>
+  </head>
+  <body class="font-sans text-gray-800 antialiased">
+    <!-- Navigation (Same as index.html) -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 bg-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <a href="index.html" class="flex items-center space-x-3 -ml-2">
+            <img src="images/amassaLogo.png" alt="AMASSA Reinigung & Hauswartung" class="h-14 w-auto" />
+          </a>
+
+          <div class="hidden lg:flex items-center space-x-6">
+            <a
+              href="index.html"
+              class="text-gray-700 hover:text-amassa-blue transition-colors font-medium"
+              >Home</a
+            >
+            <div class="relative group">
+              <button
+                class="text-amassa-blue font-bold border-b-2 border-amassa-blue flex items-center gap-1"
+              >
+                Unterhaltsreinigung <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <div
+                class="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 border border-gray-100"
+              >
+                <div class="p-3">
+                  <a
+                    href="reinigung.html#unterhaltsreinigung"
+                    class="block px-4 py-2.5 hover:bg-blue-50 rounded-lg text-sm font-bold text-amassa-blue"
+                    >Übersicht</a
+                  >
+                  <div class="border-t border-gray-100 my-2"></div>
+                  <a
+                    href="unterhaltsreinigung.html"
+                    class="block px-4 py-2.5 hover:bg-blue-50 rounded-lg text-sm"
+                    >Unterhaltsreinigung</a
+                  >
+                  <a
+                    href="bueroreinigung.html"
+                    class="block px-4 py-2.5 hover:bg-blue-50 rounded-lg text-sm"
+                    >Büroreinigung</a
+                  >
+                  <a
+                    href="praxisreinigung.html"
+                    class="block px-4 py-2.5 hover:bg-blue-50 rounded-lg text-sm"
+                    >Praxisreinigung</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="relative group">
+              <button
+                class="text-gray-700 hover:text-amassa-blue transition-colors font-medium flex items-center gap-1"
+              >
+                Spezialreinigung <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <div
+                class="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 border border-gray-100"
+              >
+                <div class="p-3">
+                  <a
+                    href="reinigung.html#spezialreinigung"
+                    class="block px-4 py-2.5 hover:bg-blue-50 rounded-lg text-sm font-bold text-amassa-blue"
+                    >Übersicht</a
+                  >
+                  <div class="border-t border-gray-100 my-2"></div>
+                  <a
+                    href="baureinigung.html"
+                    class="block px-4 py-2.5 hover:bg-blue-50 rounded-lg text-sm"
+                    >Baureinigung</a
+                  >
+                  <a
+                    href="endreinigung.html"
+                    class="block px-4 py-2.5 hover:bg-blue-50 rounded-lg text-sm"
+                    >Endreinigung / Umzug</a
+                  >
+                </div>
+              </div>
+            </div>
+            <a
+              href="hauswartung.html"
+              class="text-gray-700 hover:text-amassa-green transition-colors font-medium"
+              >Hauswartung</a
+            >
+            <a
+              href="abos-pakete.html"
+              class="text-gray-700 hover:text-amassa-accent transition-colors font-medium"
+              >Abos & Pakete</a
+            >
+            <a
+              href="referenzen.html"
+              class="text-gray-700 hover:text-amassa-blue transition-colors font-medium"
+              >Referenzen & Partner</a
+            >
+            <a
+              href="ueber-uns.html"
+              class="text-gray-700 hover:text-amassa-blue transition-colors font-medium"
+              >Über uns</a
+            >
+            <a
+              href="kontakt.html"
+              class="bg-amassa-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-amassa-blue-light shadow-lg"
+              >Jetzt Offerte anfragen</a
+            >
+                      <button
+              id="theme-toggle-desktop"
+              type="button"
+              class="theme-toggle-btn"
+              aria-label="Hell-/Dunkelmodus umschalten"
+            >
+              <i data-lucide="sun" class="w-5 h-5 theme-icon"></i>
+            </button>
+</div>
+
+          <button id="mobile-menu-btn" class="lg:hidden text-amassa-blue">
+            <i data-lucide="menu" class="w-7 h-7"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-white border-t shadow-lg"
+      >
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href="index.html"
+            class="block text-gray-700 hover:text-amassa-blue font-medium py-2"
+            >Home</a
+          >
+          <a
+            href="reinigung.html#unterhaltsreinigung"
+            class="block text-amassa-blue font-bold py-2 border-l-4 border-amassa-blue pl-3"
+            >Unterhaltsreinigung</a
+          >
+          <a
+            href="reinigung.html#spezialreinigung"
+            class="block text-gray-700 hover:text-amassa-blue font-medium py-2"
+            >Spezialreinigung</a
+          >
+          <a
+            href="hauswartung.html"
+            class="block text-gray-700 hover:text-amassa-green font-medium py-2"
+            >Hauswartung</a
+          >
+          <a
+            href="abos-pakete.html"
+            class="block text-gray-700 hover:text-amassa-accent font-medium py-2"
+            >Abos & Pakete</a
+          >
+          <a
+            href="referenzen.html"
+            class="block text-gray-700 hover:text-amassa-blue font-medium py-2"
+            >Referenzen & Partner</a
+          >
+          <a
+            href="ueber-uns.html"
+            class="block text-gray-700 hover:text-amassa-blue font-medium py-2"
+            >Über uns</a
+          >
+          <a
+            href="kontakt.html"
+            class="block bg-amassa-blue text-white px-6 py-3 rounded-lg font-semibold text-center"
+            >Jetzt Offerte anfragen</a
+          >
+                  <button
+            id="theme-toggle-mobile"
+            type="button"
+            class="theme-toggle-btn theme-toggle-mobile-btn"
+            aria-label="Hell-/Dunkelmodus umschalten"
+          >
+            <i data-lucide="sun" class="w-5 h-5 theme-icon"></i>
+            <span class="ml-2 font-semibold">Hell-/Dunkelmodus</span>
+          </button>
+</div>
+      </div>
+    </nav>
+
+    <!-- Hero Top Bar -->
+    <section class="hero">
+      <div class="container">
+        <h1>Büroreinigung</h1>
+        <p>Saubere Arbeitsplätze für ein produktives Team</p>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 border-b mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <a href="index.html" class="hover:text-amassa-blue transition-colors"
+            >Home</a
+          >
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          <a
+            href="reinigung.html"
+            class="hover:text-amassa-blue transition-colors"
+            >Reinigung</a
+          >
+          <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          <span class="text-amassa-blue font-semibold">Büroreinigung</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div id="bueroreinigung" class="mb-20 scroll-mt-32">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+              <!-- PLACEHOLDER: Büroreinigung image -->
+              <div class="image-placeholder rounded-2xl h-96 shadow-xl">
+                <div class="text-center p-8">
+                  <i
+                    data-lucide="image"
+                    class="w-16 h-16 mx-auto mb-2 opacity-30"
+                  ></i>
+                  <p class="font-semibold">BÜROREINIGUNG IMAGE</p>
+                  <p class="text-xs mt-1">600x500px - Office cleaning</p>
+                  <p class="text-xs mt-2">
+                    Modern clean office space or cleaning team at work
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-1 lg:order-2">
+              <div class="inline-block mb-4">
+                <a
+                  href="reinigung.html"
+                  class="inline-flex items-center gap-2 bg-amassa-blue/10 text-amassa-blue px-4 py-2 rounded-full text-sm font-bold hover:bg-amassa-blue/20 transition-colors"
+                  ><i data-lucide="arrow-left" class="w-4 h-4"></i> Alle
+                  Reinigungsservices</a
+                >
+              </div>
+              <h3 class="text-4xl font-display font-bold text-amassa-blue mb-6">
+                Büroreinigung
+              </h3>
+              <p class="text-lg text-gray-700 mb-6">
+                Saubere und gepflegte Büroräume schaffen eine angenehme
+                Arbeitsatmosphäre und hinterlassen bei Kunden einen
+                professionellen Eindruck. Wir sorgen für die regelmäßige Pflege
+                Ihrer Geschäftsräume.
+              </p>
+
+              <div class="space-y-3 mb-6">
+                <div
+                  class="service-detail-card bg-white p-4 rounded-xl border-2 border-gray-100"
+                >
+                  <div class="flex items-start gap-3">
+                    <i
+                      data-lucide="calendar"
+                      class="w-5 h-5 text-amassa-blue flex-shrink-0 mt-1"
+                    ></i>
+                    <div>
+                      <h5 class="font-bold text-gray-800 mb-1">
+                        Täglich, wöchentlich oder nach Bedarf
+                      </h5>
+                      <p class="text-sm text-gray-600">
+                        Flexible Reinigungsintervalle passend zu Ihrem Betrieb
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="service-detail-card bg-white p-4 rounded-xl border-2 border-gray-100"
+                >
+                  <div class="flex items-start gap-3">
+                    <i
+                      data-lucide="briefcase"
+                      class="w-5 h-5 text-amassa-blue flex-shrink-0 mt-1"
+                    ></i>
+                    <div>
+                      <h5 class="font-bold text-gray-800 mb-1">
+                        Außerhalb der Arbeitszeiten
+                      </h5>
+                      <p class="text-sm text-gray-600">
+                        Wir reinigen, wenn Ihr Team nicht da ist – ohne
+                        Störungen
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="service-detail-card bg-white p-4 rounded-xl border-2 border-gray-100"
+                >
+                  <div class="flex items-start gap-3">
+                    <i
+                      data-lucide="leaf"
+                      class="w-5 h-5 text-amassa-blue flex-shrink-0 mt-1"
+                    ></i>
+                    <div>
+                      <h5 class="font-bold text-gray-800 mb-1">
+                        Umweltfreundliche Reinigungsmittel
+                      </h5>
+                      <p class="text-sm text-gray-600">
+                        Schonend für Gesundheit und Umwelt
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-gray-50 rounded-xl p-5 mb-6">
+                <h5 class="font-bold text-gray-800 mb-3">Was wir reinigen:</h5>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-amassa-teal"></i>
+                    <span>Büros & Arbeitsflächen</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-amassa-teal"></i>
+                    <span>Sanitäranlagen</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-amassa-teal"></i>
+                    <span>Küchen & Pausenräume</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-amassa-teal"></i>
+                    <span>Eingangsbereiche</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-amassa-teal"></i>
+                    <span>Böden & Teppiche</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-amassa-teal"></i>
+                    <span>Müllentsorgung</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="kontakt.html"
+                  class="bg-amassa-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-amassa-blue-light text-center transition-all"
+                >
+                  Offerte für Büroreinigung
+                </a>
+                <a
+                  href="tel:+41782662566"
+                  class="border-2 border-amassa-blue text-amassa-blue px-6 py-3 rounded-lg font-semibold hover:bg-amassa-blue hover:text-white text-center transition-all"
+                >
+                  Telefonisch anfragen
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-gradient-to-r from-amassa-blue to-amassa-teal text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Bereit für ein sauberes Büro?</h2>
+        <p class="text-xl md:text-2xl mb-10">Kontaktieren Sie uns jetzt für eine kostenlose Beratung und Offerte</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="kontakt.html" class="bg-amassa-accent text-amassa-blue px-10 py-5 rounded-xl font-bold text-lg hover:bg-opacity-90 shadow-2xl transition-all">Kostenlose Offerte einholen</a>
+          <a href="tel:+41782662566" class="bg-white/10 backdrop-blur border-2 border-white text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">+41 78 266 25 66</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+        >
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <img src="images/amassaLogo.png" alt="AMASSA Reinigung & Hauswartung" class="h-12 w-auto" />
+            </div>
+            <p class="text-white/70 text-sm mb-6">
+              Ihr Partner für professionelle Reinigung und Hauswartung in der
+              ganzen Schweiz.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Reinigung</h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li>
+                <a
+                  href="reinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Übersicht</a
+                >
+              </li>
+              <li>
+                <a
+                  href="baureinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Baureinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="bueroreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Büroreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="endreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Endreinigung / Umzug</a
+                >
+              </li>
+              <li>
+                <a
+                  href="praxisreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Praxisreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="unterhaltsreinigung.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Unterhaltsreinigung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="reinigung.html#spezial"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Spezialreinigungen</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Unternehmen</h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li>
+                <a
+                  href="hauswartung.html"
+                  class="hover:text-amassa-green transition-colors"
+                  >Hauswartung</a
+                >
+              </li>
+              <li>
+                <a
+                  href="abos-pakete.html"
+                  class="hover:text-amassa-accent transition-colors"
+                  >Abos & Pakete</a
+                >
+              </li>
+              <li>
+                <a
+                  href="referenzen.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Referenzen & Partner</a
+                >
+              </li>
+              <li>
+                <a
+                  href="ueber-uns.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Über uns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="kontakt.html"
+                  class="hover:text-amassa-teal transition-colors"
+                  >Kontakt</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-6">Kontakt</h4>
+            <ul class="space-y-4 text-sm text-white/70">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="map-pin"
+                  class="w-5 h-5 flex-shrink-0 mt-0.5 text-amassa-teal"
+                ></i>
+                <div>Romanshornerstrasse 25<br />9300 Wittenbach</div>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="phone" class="w-5 h-5 text-amassa-teal"></i>
+                <a
+                  href="tel:+41782662566"
+                  class="hover:text-amassa-teal transition-colors"
+                  >+41 78 266 25 66</a
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="mail" class="w-5 h-5 text-amassa-teal"></i>
+                <a
+                  href="mailto:info@amassa.ch"
+                  class="hover:text-amassa-teal transition-colors"
+                  >info@amassa.ch</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm"
+          >
+            <p class="text-white/60">
+              © 2024 AMASSA GmbH. Alle Rechte vorbehalten.
+            </p>
+            <div class="flex gap-6 text-white/60">
+              <a
+                href="impressum.html"
+                class="hover:text-amassa-teal transition-colors"
+                >Impressum</a
+              >
+              <a
+                href="datenschutz.html"
+                class="hover:text-amassa-teal transition-colors"
+                >Datenschutz</a
+              >
+              <a
+                href="agb.html"
+                class="hover:text-amassa-teal transition-colors"
+                >AGB</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("nav-blur", "shadow-xl");
+        } else {
+          navbar.classList.remove("nav-blur", "shadow-xl");
+        }
+      });
+
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+          const icon = this.querySelector("[data-lucide]");
+          if (mobileMenu.classList.contains("hidden")) {
+            icon.setAttribute("data-lucide", "menu");
+          } else {
+            icon.setAttribute("data-lucide", "x");
+          }
+          lucide.createIcons();
+        });
+      }
+    
+      // Theme toggle (Hell-/Dunkelmodus)
+      (function () {
+        var html = document.documentElement;
+        function updateThemeIcons(theme) {
+          document.querySelectorAll(".theme-icon").forEach(function (icon) {
+            icon.setAttribute("data-lucide", theme === "dark" ? "moon" : "sun");
+          });
+          if (window.lucide) lucide.createIcons();
+        }
+        updateThemeIcons(
+          html.getAttribute("data-theme") === "dark" ? "dark" : "light"
+        );
+        document
+          .querySelectorAll("#theme-toggle-desktop, #theme-toggle-mobile")
+          .forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              var newTheme =
+                html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+              html.setAttribute("data-theme", newTheme);
+              try {
+                localStorage.setItem("amassa-theme", newTheme);
+              } catch (e) {}
+              updateThemeIcons(newTheme);
+            });
+          });
+      })();
+
+    </script>
+  </body>
+</html>
